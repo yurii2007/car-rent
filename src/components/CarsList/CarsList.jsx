@@ -19,7 +19,7 @@ export const CarsList = () => {
 
   return (
     <>
-      <ul className="flex flex-row flex-wrap gap-y-[50px] gap-x-[29px]">
+      <ul className="flex justify-center flex-row flex-wrap gap-y-[20px] gap-x-[29px]">
         {cars?.map((car) => (
           <CarItem key={car.id} carInfo={car} />
         ))}

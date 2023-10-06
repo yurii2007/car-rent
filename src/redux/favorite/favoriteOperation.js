@@ -14,3 +14,5 @@ export const getCarDetails = createAsyncThunk(
 );
 
 export const addCarToFavorites = createAction("favorites/addCar", car => ({payload: car}));
+
+export const removeCarFromFavorites = createAction('favorite/remove', id => ({payload: id}))

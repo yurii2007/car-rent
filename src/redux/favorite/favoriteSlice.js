@@ -1,5 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { addCarToFavorites, getCarDetails } from "./favoriteOperation";
+import {
+  addCarToFavorites,
+  getCarDetails,
+  removeCarFromFavorites,
+} from "./favoriteOperation";
 
 const initialState = {
   isLoading: false,
@@ -23,6 +27,9 @@ export const favoritesSlice = createSlice({
       })
       .addCase(addCarToFavorites, (state, { payload }) => {
         state.carsList.push(payload);
+      })
+      .addCase(removeCarFromFavorites, (state, { payload }) => {
+        state.carsList = state.carsList.filter((car) => car.id !== payload);
       });
   },
 });

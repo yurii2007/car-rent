@@ -9,9 +9,13 @@ export const Layout = () => {
         <NavLink to="/catalog">Catalog</NavLink>
         <NavLink to="/favorites">Favorites</NavLink>
       </nav>
+      <main>
+      <section className="max-w-[375px] md:max-w-[1024px] xl:max-w-[1440px] my-0 mx-auto">
       <Suspense fallback={<div>Loading...</div>}>
         <Outlet />
       </Suspense>
+      </section>
+      </main>
     </>
   );
 };
