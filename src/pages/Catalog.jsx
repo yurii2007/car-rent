@@ -1,5 +1,5 @@
-export const Catalog = () => {
-  return (
-    <div>Catalog</div>
-  )
-}
+const Catalog = () => {
+  return <div>Catalog</div>;
+};
+
+export default Catalog;
