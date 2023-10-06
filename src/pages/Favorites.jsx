@@ -1,9 +1,9 @@
-import { FavoritesList } from "../components/FavoritesList/FavoritesList";
+import { CarsList } from "../components/CarsList/CarsList";
 
 const Favorites = () => {
   return (
     <>
-      <FavoritesList />
+      <CarsList isFavorite={true} />
     </>
   );
 };

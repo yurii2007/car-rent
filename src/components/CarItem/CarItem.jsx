@@ -68,7 +68,7 @@ export const CarItem = ({ carInfo }) => {
         </div>
         <button
           onClick={() => onLearnMoreClick(carInfo)}
-          className="mt-[16px] py-[12px] bg-btn-primary hover:bg-btn-hover rounded-[12px] text-white font-semibold text-center text-[14px] leading-[20px]"
+          className="mt-[16px] py-[12px] bg-btn-primary hover:bg-btn-hover focus:bg-btn-hover rounded-[12px] text-white font-semibold text-center text-[14px] leading-[20px]"
           type="button"
         >
           Learn More
