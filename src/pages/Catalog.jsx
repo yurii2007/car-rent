@@ -1,5 +1,7 @@
+import { CarsList } from "../components/CarsList/CarsList";
+
 const Catalog = () => {
-  return <div>Catalog</div>;
+  return <CarsList>Catalog</CarsList>;
 };
 
 export default Catalog;
