@@ -1,7 +1,11 @@
 import { CarsList } from "../components/CarsList/CarsList";
 
 const Catalog = () => {
-  return <CarsList>Catalog</CarsList>;
+  return (
+    <>
+      <CarsList />
+    </>
+  );
 };
 
 export default Catalog;
