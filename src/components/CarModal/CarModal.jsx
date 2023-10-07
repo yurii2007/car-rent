@@ -26,7 +26,7 @@ export const CarModal = ({ car, closeModal }) => {
     >
       <div className="flex flex-col max-w-[320px] relative top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] z-[1000] bg-white p-[20px]">
         <button
-          className="absolute top-[16px] right-[16px]"
+          className="absolute top-[16px] right-[16px] z-10"
           onClick={() => closeModal(null)}
           type="button"
         >

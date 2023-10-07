@@ -4,14 +4,24 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { CarItem } from "../CarItem/CarItem";
 import { getCars } from "../../redux/cars/carsOperations";
+import { Filter } from "../Filter/Filter";
+import { applyFilters } from "../../utils/helpers";
+
+const initialFilters = {
+  make: "",
+  rentalPrice: Infinity,
+  mileageFrom: 0,
+  mileageTo: Infinity,
+};
 
 export const CarsList = () => {
   const location = useLocation();
   const dispatch = useDispatch();
-  const [currentPage, setCurrentPage] = useState(1);
   const cars = useSelector(
     location.pathname.includes("favorite") ? selectFavorites : selectCars
   );
+  const [currentPage, setCurrentPage] = useState(1);
+  const [filters, setFilters] = useState(initialFilters);
 
   useEffect(() => {
     dispatch(getCars(currentPage));
@@ -21,10 +31,13 @@ export const CarsList = () => {
     setCurrentPage((prevPage) => prevPage + 1);
   };
 
+  const carToRender = applyFilters(cars, filters);
+
   return (
     <>
+      <Filter setFilter={setFilters} />
       <ul className="flex justify-center flex-row flex-wrap gap-y-[20px] gap-x-[29px]">
-        {cars?.map((car) => (
+        {carToRender?.map((car) => (
           <CarItem key={car.id} carInfo={car} />
         ))}
       </ul>
