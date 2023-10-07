@@ -10,7 +10,8 @@ module.exports = {
       colors: {
         'btn-primary': '#3470FF',
         'overlay': "#121417",
-        'btn-hover': '#0B44CD'
+        'btn-hover': '#0B44CD',
+        'background': "#F9F9F9"
       }
     },
   },
