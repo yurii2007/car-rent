@@ -1,21 +1,23 @@
 {
   "files": {
-    "main.css": "/car-rent/static/css/main.374dbfb5.css",
-    "main.js": "/car-rent/static/js/main.fa897a3d.js",
-    "static/js/875.8147ec12.chunk.js": "/car-rent/static/js/875.8147ec12.chunk.js",
-    "static/js/395.50121327.chunk.js": "/car-rent/static/js/395.50121327.chunk.js",
-    "static/js/775.07104572.chunk.js": "/car-rent/static/js/775.07104572.chunk.js",
+    "main.css": "/car-rent/static/css/main.e19ef51e.css",
+    "main.js": "/car-rent/static/js/main.d6ce8b17.js",
+    "static/js/875.a5edd6a1.chunk.js": "/car-rent/static/js/875.a5edd6a1.chunk.js",
+    "static/js/395.4cf6ff53.chunk.js": "/car-rent/static/js/395.4cf6ff53.chunk.js",
+    "static/js/476.3ff8b18d.chunk.js": "/car-rent/static/js/476.3ff8b18d.chunk.js",
+    "static/js/54.8b78fe8e.chunk.js": "/car-rent/static/js/54.8b78fe8e.chunk.js",
     "index.html": "/car-rent/index.html",
     "static/media/heart.svg": "/car-rent/static/media/heart.4f90324bb1306c6788753df75e79ee15.svg",
     "static/media/x.svg": "/car-rent/static/media/x.deb20e5da737e93121346cb3855e8f21.svg",
-    "main.374dbfb5.css.map": "/car-rent/static/css/main.374dbfb5.css.map",
-    "main.fa897a3d.js.map": "/car-rent/static/js/main.fa897a3d.js.map",
-    "875.8147ec12.chunk.js.map": "/car-rent/static/js/875.8147ec12.chunk.js.map",
-    "395.50121327.chunk.js.map": "/car-rent/static/js/395.50121327.chunk.js.map",
-    "775.07104572.chunk.js.map": "/car-rent/static/js/775.07104572.chunk.js.map"
+    "main.e19ef51e.css.map": "/car-rent/static/css/main.e19ef51e.css.map",
+    "main.d6ce8b17.js.map": "/car-rent/static/js/main.d6ce8b17.js.map",
+    "875.a5edd6a1.chunk.js.map": "/car-rent/static/js/875.a5edd6a1.chunk.js.map",
+    "395.4cf6ff53.chunk.js.map": "/car-rent/static/js/395.4cf6ff53.chunk.js.map",
+    "476.3ff8b18d.chunk.js.map": "/car-rent/static/js/476.3ff8b18d.chunk.js.map",
+    "54.8b78fe8e.chunk.js.map": "/car-rent/static/js/54.8b78fe8e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.374dbfb5.css",
-    "static/js/main.fa897a3d.js"
+    "static/css/main.e19ef51e.css",
+    "static/js/main.d6ce8b17.js"
   ]
 }
