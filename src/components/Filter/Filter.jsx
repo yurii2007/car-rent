@@ -9,19 +9,20 @@ import {
 } from "./CustomSelectStyles";
 import { useState } from "react";
 
-export const Filter = ({ setFilter }) => {
+export const Filter = ({ setFilter, onSubmit }) => {
   const [isDisplaySearch, setDisplaySearch] = useState(false);
 
-  const onSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-  };
-
-  const onChange = (e) => {
-    setFilter((prevState) => ({
-      ...prevState,
-      [e.target.name]:
-        e.target.name === "make" ? e.target.value : +e.target.value,
-    }));
+    const { make, mileageFrom, mileageTo, rentalPrice } = e.target.elements;
+    const filters = {
+      make: make.value || '',
+      rentalPrice: +rentalPrice.value || 100000,
+      mileageFrom: +mileageFrom.value || 0,
+      mileageTo: +mileageTo.value || 100000,
+    };
+    setFilter(filters)
+    onSubmit();
   };
 
   const onClickSearch = () => {
@@ -48,16 +49,13 @@ export const Filter = ({ setFilter }) => {
             ? "flex flex-col items-center px-[25px] gap-y-[8px] pb-[10px]"
             : "hidden"
         }  md:flex gap-[14px] xl:gap-[18px] max-w-[570px] xl:max-w-[860px] mx-auto mb-[50px]`}
-        onSubmit={onSubmit}
+        onSubmit={handleSubmit}
       >
         <div className="w-[95%] md:w-auto [&>label]:block flex justify-between gap-[8px] md:gap-[14px] xl:gap-[18px]">
-          <label className="">
+          <label>
             <Select
               name="make"
               placeholder="Enter the text"
-              onChange={(e) => {
-                onChange({ target: { value: e.value, name: "make" } });
-              }}
               options={makes}
               styles={customMakeSelectStyles}
             />
@@ -66,9 +64,6 @@ export const Filter = ({ setFilter }) => {
             <Select
               name="rentalPrice"
               placeholder="To $"
-              onChange={(e) => {
-                onChange({ target: { value: e.value, name: "rentalPrice" } });
-              }}
               options={generatePricesArr().map((price) => ({
                 value: price,
                 label: `$${price}`,
@@ -81,7 +76,6 @@ export const Filter = ({ setFilter }) => {
           <label>
             <input
               className="bg-background h-[100%] p-[10px] xl:pl-[24px] w-[100%] placeholder:text-overlay focus:outline-btn-primary"
-              onChange={onChange}
               type="number"
               name="mileageFrom"
               placeholder="From"
@@ -90,7 +84,6 @@ export const Filter = ({ setFilter }) => {
           <label>
             <input
               className="bg-background h-[100%] p-[10px] xl:pl-[24px] w-[100%] placeholder:text-overlay focus:outline-btn-primary"
-              onChange={onChange}
               type="number"
               name="mileageTo"
               placeholder="To"
