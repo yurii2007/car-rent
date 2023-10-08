@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getCars } from "./carsOperations";
+import { getAllCars, getCars } from "./carsOperations";
 
 const initialState = {
   cars: [],
@@ -19,6 +19,16 @@ export const carsSlice = createSlice({
         state.isLoading = false;
       })
       .addCase(getCars.rejected, (state) => {
+        state.isLoading = false;
+      })
+      .addCase(getAllCars.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(getAllCars.fulfilled, (state, { payload }) => {
+        state.cars = payload;
+        state.isLoading = false;
+      })
+      .addCase(getAllCars.rejected, (state) => {
         state.isLoading = false;
       });
   },

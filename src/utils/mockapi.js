@@ -17,6 +17,11 @@ export const fetchCars = async (page = 1) => {
   return data;
 };
 
+export const fetchAllCars = async () => {
+  const { data } = await instance.get();
+  return data;
+};
+
 export const getCarById = async (id) => {
   const { data } = await instance.get(`/${id}`);
   return data;

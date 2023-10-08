@@ -7,11 +7,11 @@ import { getCars } from "../../redux/cars/carsOperations";
 import { Filter } from "../Filter/Filter";
 import { applyFilters } from "../../utils/helpers";
 
-const initialFilters = {
+export const initialFilters = {
   make: "",
-  rentalPrice: Infinity,
+  rentalPrice: 100000,
   mileageFrom: 0,
-  mileageTo: Infinity,
+  mileageTo: 10000000,
 };
 
 export const CarsList = () => {
