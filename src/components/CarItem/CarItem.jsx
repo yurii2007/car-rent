@@ -34,6 +34,7 @@ export const CarItem = ({ carInfo }) => {
             className="w-[274px] h-[228px]"
             src={carInfo.img}
             alt={`${carInfo.make} ${carInfo.model}`}
+            loading="lazy"
           />
           <button
             className="absolute top-[14px] right-[14px] border-none bg-transparent"

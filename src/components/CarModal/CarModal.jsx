@@ -33,7 +33,7 @@ export const CarModal = ({ car, closeModal }) => {
           <CloseBtn fill="#111" width={24} height={24} />
         </button>
         <div className="relative md:w-[680px] md:h-[350px] xl:w-[470px] xl:h-auto rounded-[12px] overflow-hidden">
-          <img src={car.img} alt={`${car.make} ${car.model}`} />
+          <img src={car.img} alt={`${car.make} ${car.model}`} loading="lazy" />
         </div>
         <p className="mt-[12px] mb-[8px] text-[18px] leading-[24px] font-medium">
           {car.make}
@@ -55,18 +55,23 @@ export const CarModal = ({ car, closeModal }) => {
           Accessories and functionalities:
         </p>
         <div className="mt-[8px] [&>*]:inline-block text-overlay/[0.5] [&>*]:border-r-[1px] [&>*]:border-overlay/[0.1] [&>*]:px-[6px] text-[12px] leading-[18px]">
-          {car.accessories.slice(1, 3).concat(car.functionalities.slice(1,3)).map((el) => (
-            <span className="last:border-r-0" key={el}>
-              {el}
-            </span>
-          ))}
+          {car.accessories
+            .slice(1, 3)
+            .concat(car.functionalities.slice(1, 3))
+            .map((el) => (
+              <span className="last:border-r-0" key={el}>
+                {el}
+              </span>
+            ))}
         </div>
         <p className="mt-[18px] text-[14px] font-medium leading-[20px]">
           Rental Conditions:
         </p>
-        <div className="flex flex-wrap gap-[8px] mt-[8px]
+        <div
+          className="flex flex-wrap gap-[8px] mt-[8px]
          [&>p]:bg-background [&>p]:rounded-[35px] [&>p]:py-[7px] [&>p]:px-[10px] 
-         [&>p]:font-semibold [&>p]:text-[12px] [&>p]:leading-[18px]">
+         [&>p]:font-semibold [&>p]:text-[12px] [&>p]:leading-[18px]"
+        >
           {car.rentalConditions.split("\n").map((el) => (
             <p key={el}>{el}</p>
           ))}
@@ -77,7 +82,12 @@ export const CarModal = ({ car, closeModal }) => {
             Price: <span>{car.rentalPrice}</span>
           </p>
         </div>
-        <a className="block md:w-[168px] mt-[16px] xl:mt-[24px] py-[12px] bg-btn-primary hover:bg-btn-hover focus:bg-btn-hover rounded-[12px] text-white font-semibold text-center text-[14px] leading-[20px]" href="tel:+380730000000">Rental Car</a>
+        <a
+          className="block md:w-[168px] mt-[16px] xl:mt-[24px] py-[12px] bg-btn-primary hover:bg-btn-hover focus:bg-btn-hover rounded-[12px] text-white font-semibold text-center text-[14px] leading-[20px]"
+          href="tel:+380730000000"
+        >
+          Rental Car
+        </a>
       </div>
     </div>
   );

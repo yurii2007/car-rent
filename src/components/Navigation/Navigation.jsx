@@ -15,13 +15,13 @@ export const Navigation = ({ isOpenNav, setOpenNav }) => {
           : ""
       } md:static gap-[18px]`}
     >
-      <NavLink onClick={setOpenNav} className="text-[20px] font-medium leading-[20px]" to="/">
+      <NavLink onClick={setOpenNav} className="hover:underline text-[20px] font-medium leading-[20px]" to="/">
         Home
       </NavLink>
-      <NavLink onClick={setOpenNav} className="text-[20px] font-medium leading-[20px]" to="/catalog">
+      <NavLink onClick={setOpenNav} className="hover:underline text-[20px] font-medium leading-[20px]" to="/catalog">
         Catalog
       </NavLink>
-      <NavLink onClick={setOpenNav} className="text-[20px] font-medium leading-[20px]" to="/favorites">
+      <NavLink onClick={setOpenNav} className="hover:underline text-[20px] font-medium leading-[20px]" to="/favorites">
         Favorites
       </NavLink>
     </nav>
