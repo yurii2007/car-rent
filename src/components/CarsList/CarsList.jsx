@@ -17,17 +17,15 @@ export const initialFilters = {
 export const CarsList = () => {
   const dispatch = useDispatch();
   const location = useLocation();
+  const isFavoritePage = location.pathname.includes("favorite");
   const [currentPage, setCurrentPage] = useState(1);
   const [filters, setFilters] = useState(initialFilters);
-  let isShowLoadMore =
-    location.pathname.includes("favorite") || currentPage > 3;
-  const cars = useSelector(
-    location.pathname.includes("favorite") ? selectFavorites : selectCars
-  );
+  const cars = useSelector(isFavoritePage ? selectFavorites : selectCars);
 
   useEffect(() => {
+    if (isFavoritePage) return;
     dispatch(getCars(currentPage));
-  }, [dispatch, currentPage]);
+  }, [dispatch, currentPage, isFavoritePage]);
 
   const onClickLoadMore = () => {
     setCurrentPage((prevPage) => prevPage + 1);
@@ -41,7 +39,7 @@ export const CarsList = () => {
 
   return (
     <>
-      {location.pathname.includes("favorite") ? null : (
+      {isFavoritePage ? null : (
         <Filter onSubmit={onSubmit} setFilter={setFilters} />
       )}
       <ul className="flex justify-center flex-row flex-wrap gap-y-[20px] gap-x-[29px]">
@@ -49,7 +47,7 @@ export const CarsList = () => {
           <CarItem key={car.id} carInfo={car} />
         ))}
       </ul>
-      {isShowLoadMore || carToRender.length < 8 ? null : (
+      {isFavoritePage || carToRender.length % 8 !== 0 ? null : (
         <button
           onClick={onClickLoadMore}
           className="mt-[40px] mb-[10px] mx-auto block text-btn-primary hover:text-btn-hover focus:text-btn-hover font-medium text=[16px] leading-[24px] underline decoration-solid"

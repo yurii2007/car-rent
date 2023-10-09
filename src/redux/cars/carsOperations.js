@@ -1,4 +1,4 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
+import { createAction, createAsyncThunk } from "@reduxjs/toolkit";
 import { fetchAllCars, fetchCars } from "../../utils/mockapi";
 
 export const getCars = createAsyncThunk(
@@ -24,3 +24,5 @@ export const getAllCars = createAsyncThunk(
     }
   }
 );
+
+export const resetCarsStore = createAction("cars/resetCars");
