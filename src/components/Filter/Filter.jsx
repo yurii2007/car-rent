@@ -16,12 +16,12 @@ export const Filter = ({ setFilter, onSubmit }) => {
     e.preventDefault();
     const { make, mileageFrom, mileageTo, rentalPrice } = e.target.elements;
     const filters = {
-      make: make.value || '',
+      make: make.value || "",
       rentalPrice: +rentalPrice.value || 100000,
       mileageFrom: +mileageFrom.value || 0,
       mileageTo: +mileageTo.value || 100000,
     };
-    setFilter(filters)
+    setFilter(filters);
     onSubmit();
   };
 

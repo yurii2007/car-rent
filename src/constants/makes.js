@@ -20,4 +20,6 @@ export const makes = [
   { value: "Chrysler", label: "Chrysler" },
   { value: "Kia", label: "Kia" },
   { value: "Land", label: "Land" },
+  { value: "Toyota", label: "Toyota" },
+  { value: "Ford", label: "Ford" },
 ];

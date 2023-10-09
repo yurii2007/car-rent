@@ -27,3 +27,9 @@ export const applyFilters = (cars, filters) => {
     );
   });
 };
+
+export const formatMileage = (mileage) => {
+  const res = mileage.toString().split("");
+  res.splice(-3, 0, ",");
+  return res.join("");
+};
