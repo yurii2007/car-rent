@@ -72,11 +72,12 @@ export const CarModal = ({ car, closeModal }) => {
          [&>p]:bg-background [&>p]:rounded-[35px] [&>p]:py-[7px] [&>p]:px-[10px] 
          [&>p]:font-semibold [&>p]:text-[12px] [&>p]:leading-[18px]"
         >
-          {car.rentalConditions.split("\n").map((el) => (
-            <p key={el}>{el}</p>
-          ))}
+          {car.rentalConditions.split("\n").map((el, i) => {
+            if(i === 0) return <p key={el}>Minimal age: <span className="text-btn-primary">{el.split('').slice(-2).join('')}</span></p>
+            return <p key={el}>{el}</p>;
+          })}
           <p>
-            Mileage:{" "}
+            Mileage:
             <span className="text-btn-primary">
               {formatMileage(car.mileage)}
             </span>
