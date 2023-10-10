@@ -6,14 +6,21 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## A list of tools that I use in this project
 
-![React][(./assets/react-logo.png)](https://react.dev/)
+<a href="https://react.dev/">
+<img src="./assets/react-logo.png" alt="React Logo" title="React" />
+</a>
 
+<a href="#">
+<img src="./assets//js-logo.png" alt="JavaScript Logo" title="JavaScript" />
+</a>
 
-![JavaScript][(./assets//js-logo.png)](#)
+<a href="https://tailwindcss.com/">
+<img src="./assets/tailwind-logo.png" alt="Tailwind CSS Logo" title="Tailwind CSS" />
+</a>
 
-![Tailwind CSS][(./assets/tailwind-logo.png)](https://tailwindcss.com/)
-
-![Redux Toolkit][(./assets/redux-logo.png)](https://redux.js.org/)
+<a href="https://redux.js.org/">
+<img src="./assets/redux-logo.png" alt="Redux Toolkit Logo" title="Redux Toolkit" />
+</a>
 
 ### A list of npm packages that I use in this project
 
