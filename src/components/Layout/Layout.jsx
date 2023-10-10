@@ -13,7 +13,7 @@ export const Layout = () => {
       {isLoading && <Loader />}
       <Header />
       <main>
-        <section className="max-w-[375px] md:max-w-[1024px] xl:max-w-[1440px] my-0 mx-auto">
+        <section className="max-w-[375px] md:max-w-[1024px] xl:max-w-[1440px] my-0 pb-[20px] mx-auto">
           <Suspense fallback={<Loader />}>
             <Outlet />
           </Suspense>
